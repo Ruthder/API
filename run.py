@@ -19,7 +19,7 @@ def fixDepartment(dept):
         fixdept = "Atlántico"
     elif("cartagena" in dept):
         fixdept = "Bolívar"
-    elif("santa marta" in dept.lower):
+    elif("santa marta" in dept):
         fixdept = "Magdalena"
     elif("buenaventura" in dept):
         fixdept = "Valle del Cauca"
