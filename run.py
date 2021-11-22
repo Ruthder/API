@@ -11,7 +11,7 @@ def hello_world():
 
 @app.route("/department/<dept>", methods=["GET"])
 def fixDepartment(dept):
-
+    dept = dept.lower()
     fixdept = dept
     if("bogotá" in dept):
         fixdept = "Cundinamarca"
@@ -19,7 +19,7 @@ def fixDepartment(dept):
         fixdept = "Atlántico"
     elif("cartagena" in dept):
         fixdept = "Bolívar"
-    elif("santa marta" in dept):
+    elif("santa marta" in dept.lower):
         fixdept = "Magdalena"
     elif("buenaventura" in dept):
         fixdept = "Valle del Cauca"
