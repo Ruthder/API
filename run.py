@@ -12,19 +12,18 @@ def hello_world():
 @app.route("/department/<dept>", methods=["GET"])
 def fixDepartment(dept):
     original = dept
-    dept = dept.lower()
     fixdept = dept
-    if("bogotá" in dept):
+    if("bogotá" in dept.lower()):
         fixdept = "Cundinamarca"
-    elif("barranquilla" in dept):
+    elif("barranquilla" in dept.lower()):
         fixdept = "Atlántico"
-    elif("cartagena" in dept):
+    elif("cartagena" in dept).lower():
         fixdept = "Bolívar"
-    elif("santa marta" in dept):
+    elif("santa marta" in dept.lower()):
         fixdept = "Magdalena"
-    elif("buenaventura" in dept):
+    elif("buenaventura" in dept.lower()):
         fixdept = "Valle del Cauca"
-    response = {"original": original , "fixedDepartment":fixdept}
+    response = {"original": original , "fixedDepartment":fixdept.capit}
     response = jsonify(response)
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     return response
