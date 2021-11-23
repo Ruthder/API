@@ -11,6 +11,7 @@ def hello_world():
 
 @app.route("/department/<dept>", methods=["GET"])
 def fixDepartment(dept):
+    original = dept
     dept = dept.lower()
     fixdept = dept
     if("bogotá" in dept):
@@ -23,7 +24,7 @@ def fixDepartment(dept):
         fixdept = "magdalena"
     elif("buenaventura" in dept):
         fixdept = "Valle del Cauca"
-    response = {"original": dept.capitalize() , "fixedDepartment":fixdept.capitalize()}
+    response = {"original": original , "fixedDepartment":fixdept.capitalize()}
     response = jsonify(response)
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     return response
