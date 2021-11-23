@@ -15,16 +15,16 @@ def fixDepartment(dept):
     dept = dept.lower()
     fixdept = dept
     if("bogotá" in dept):
-        fixdept = "cundinamarca"
+        fixdept = "Cundinamarca"
     elif("barranquilla" in dept):
-        fixdept = "atlántico"
+        fixdept = "Atlántico"
     elif("cartagena" in dept):
-        fixdept = "bolívar"
+        fixdept = "Bolívar"
     elif("santa marta" in dept):
-        fixdept = "magdalena"
+        fixdept = "Magdalena"
     elif("buenaventura" in dept):
         fixdept = "Valle del Cauca"
-    response = {"original": original , "fixedDepartment":fixdept.capitalize()}
+    response = {"original": original , "fixedDepartment":fixdept}
     response = jsonify(response)
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     return response
