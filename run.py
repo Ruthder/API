@@ -7,23 +7,23 @@ app.config['JSON_AS_ASCII'] = False
 
 @app.route("/")
 def hello_world():
-    return "Hello, World!"
+    return "API - Corregir departamentos"
 
 @app.route("/department/<dept>", methods=["GET"])
 def fixDepartment(dept):
     dept = dept.lower()
     fixdept = dept
     if("bogotá" in dept):
-        fixdept = "Cundinamarca"
+        fixdept = "cundinamarca"
     elif("barranquilla" in dept):
-        fixdept = "Atlántico"
+        fixdept = "atlántico"
     elif("cartagena" in dept):
-        fixdept = "Bolívar"
+        fixdept = "bolívar"
     elif("santa marta" in dept):
-        fixdept = "Magdalena"
+        fixdept = "magdalena"
     elif("buenaventura" in dept):
         fixdept = "Valle del Cauca"
-    response = {"original": dept, "fixedDepartment":fixdept}
+    response = {"original": dept.capitalize() , "fixedDepartment":fixdept.capitalize()}
     response = jsonify(response)
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     return response
