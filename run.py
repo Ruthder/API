@@ -23,7 +23,7 @@ def fixDepartment(dept):
         fixdept = "Magdalena"
     elif("buenaventura" in dept.lower()):
         fixdept = "Valle del Cauca"
-    response = {"original": original , "fixedDepartment":fixdept.capit}
+    response = {"original": original , "fixedDepartment":fixdept}
     response = jsonify(response)
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     return response
