@@ -13,15 +13,16 @@ def hello_world():
 def fixDepartment(dept):
     original = dept
     fixdept = dept
-    if("bogotá" in dept.lower()):
+    dept = dept.lower()
+    if("bogotá" in dept):
         fixdept = "Cundinamarca"
-    elif("barranquilla" in dept.lower()):
+    elif("barranquilla" in dept):
         fixdept = "Atlántico"
-    elif("cartagena" in dept).lower():
+    elif("cartagena" in dept):
         fixdept = "Bolívar"
-    elif("santa marta" in dept.lower()):
+    elif("santa marta" in dept):
         fixdept = "Magdalena"
-    elif("buenaventura" in dept.lower()):
+    elif("buenaventura" in dept):
         fixdept = "Valle del Cauca"
     response = {"original": original , "fixedDepartment":fixdept}
     response = jsonify(response)
